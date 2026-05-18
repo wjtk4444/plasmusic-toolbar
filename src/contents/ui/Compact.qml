@@ -81,12 +81,12 @@ Item {
 
     MouseAreaWithWheelHandler {
         anchors.fill: parent
-        acceptedButtons: Qt.LeftButton | Qt.MiddleButton | Qt.BackButton | Qt.ForwardButton
+        acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.BackButton | Qt.ForwardButton
         propagateComposedEvents: true
 
         onClicked: (mouse) => {
             switch (mouse.button) {
-            case Qt.MiddleButton:
+            case Qt.RightButton:
                 player.playPause()
                 break
             case Qt.BackButton:
@@ -108,13 +108,13 @@ Item {
             }
         }
 
-        onWheelUp: {
-            player.changeVolume(plasmoid.configuration.volumeStep / 100, true);
-        }
-
-        onWheelDown: {
-            player.changeVolume(-plasmoid.configuration.volumeStep / 100, true);
-        }
+        // onWheelUp: {
+        //     player.changeVolume(plasmoid.configuration.volumeStep / 100, true);
+        // }
+        // 
+        // onWheelDown: {
+        //     player.changeVolume(-plasmoid.configuration.volumeStep / 100, true);
+        // }
     }
 
     GridLayout {
