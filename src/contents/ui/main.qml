@@ -26,8 +26,7 @@ PlasmoidItem {
         let text = player.artists ? i18nc("%1 is the media artist/author and %2 is the player name", "by %1 (%2)", player.artists, player.identity)
             : i18nc("%1 is the player name", "%1", player.identity)
         if(!hidePlayerControlBinds){
-            text += "\n" + (player.playbackStatus === Mpris.PlaybackStatus.Playing ? i18n("Middle-click to pause") : i18n("Middle-click to play"))
-            text += "\n" + i18n("Scroll to adjust volume")
+            text += "\n" + (player.playbackStatus === Mpris.PlaybackStatus.Playing ? i18n("Right-click to pause") : i18n("Right-click to play"))
             text += "\n" + (player.canRaise ? i18n("Ctrl+Click to bring player to the front") : i18n("This player can't be raised"))
         }
         return text
