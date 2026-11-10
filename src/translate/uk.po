@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmusic-toolbar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-09 13:21+0000\n"
+"POT-Creation-Date: 2026-11-10 10:10+0000\n"
 "PO-Revision-Date: 2025-09-30 01:49+0200\n"
 "Last-Translator: Vsevolod «Damglador» Stopchanskyi <vse.stopchanskyi@gmail."
 "com>\n"
@@ -44,10 +44,20 @@ msgstr ""
 msgid "Bring player to the front"
 msgstr "Сфокусувати програвач"
 
-#: src/contents/ui/Full.qml:192 src/contents/ui/main.qml:31
+#: src/contents/ui/Full.qml:192 src/contents/ui/main.qml:30
 #, kde-format
 msgid "This player can't be raised"
 msgstr "Цей програвач неможливо сфокусувати"
+
+#: src/contents/ui/Full.qml:286
+#, kde-format
+msgid "Click to copy the track info"
+msgstr ""
+
+#: src/contents/ui/components/TextCopyArea.qml:14
+#, kde-format
+msgid "Copied!"
+msgstr ""
 
 #: src/contents/ui/config/Compact.qml:50 src/contents/ui/config/Full.qml:46
 #, kde-format
@@ -615,20 +625,27 @@ msgstr "%1"
 
 #: src/contents/ui/main.qml:29
 #, kde-format
-msgid "Middle-click to pause"
-msgstr "СКМ: Призупинити"
+msgid "Right-click to pause"
+msgstr ""
 
 #: src/contents/ui/main.qml:29
 #, kde-format
-msgid "Middle-click to play"
-msgstr "СКМ: Відтворити"
+msgid "Right-click to play"
+msgstr ""
 
 #: src/contents/ui/main.qml:30
 #, kde-format
-msgid "Scroll to adjust volume"
-msgstr "Колесико миші: Зміна гучності"
-
-#: src/contents/ui/main.qml:31
-#, kde-format
 msgid "Ctrl+Click to bring player to the front"
 msgstr "Ctrl+Клац: Сфокусувати програвач"
+
+#, kde-format
+#~ msgid "Middle-click to pause"
+#~ msgstr "СКМ: Призупинити"
+
+#, kde-format
+#~ msgid "Middle-click to play"
+#~ msgstr "СКМ: Відтворити"
+
+#, kde-format
+#~ msgid "Scroll to adjust volume"
+#~ msgstr "Колесико миші: Зміна гучності"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmusic-toolbar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-09 13:21+0000\n"
+"POT-Creation-Date: 2026-11-10 10:10+0000\n"
 "PO-Revision-Date: 2026-05-03 04:35-0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -42,10 +42,20 @@ msgstr ""
 msgid "Bring player to the front"
 msgstr "Trazer o reprodutor para a frente"
 
-#: src/contents/ui/Full.qml:192 src/contents/ui/main.qml:31
+#: src/contents/ui/Full.qml:192 src/contents/ui/main.qml:30
 #, kde-format
 msgid "This player can't be raised"
 msgstr "Este reprodutor não pode ser exibido"
+
+#: src/contents/ui/Full.qml:286
+#, kde-format
+msgid "Click to copy the track info"
+msgstr ""
+
+#: src/contents/ui/components/TextCopyArea.qml:14
+#, kde-format
+msgid "Copied!"
+msgstr ""
 
 #: src/contents/ui/config/Compact.qml:50 src/contents/ui/config/Full.qml:46
 #, kde-format
@@ -623,20 +633,27 @@ msgstr ""
 
 #: src/contents/ui/main.qml:29
 #, kde-format
-msgid "Middle-click to pause"
-msgstr "Clique no botão do meio para pausar"
+msgid "Right-click to pause"
+msgstr ""
 
 #: src/contents/ui/main.qml:29
 #, kde-format
-msgid "Middle-click to play"
-msgstr "Clique no botão do meio para reproduzir"
+msgid "Right-click to play"
+msgstr ""
 
 #: src/contents/ui/main.qml:30
 #, kde-format
-msgid "Scroll to adjust volume"
-msgstr "Deslize para ajustar o volume"
-
-#: src/contents/ui/main.qml:31
-#, kde-format
 msgid "Ctrl+Click to bring player to the front"
 msgstr "Ctrl+Clique para trazer o reprodutor para a frente"
+
+#, kde-format
+#~ msgid "Middle-click to pause"
+#~ msgstr "Clique no botão do meio para pausar"
+
+#, kde-format
+#~ msgid "Middle-click to play"
+#~ msgstr "Clique no botão do meio para reproduzir"
+
+#, kde-format
+#~ msgid "Scroll to adjust volume"
+#~ msgstr "Deslize para ajustar o volume"
