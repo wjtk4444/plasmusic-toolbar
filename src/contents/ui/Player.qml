@@ -123,7 +123,31 @@ QtObject {
     readonly property string album: ready ? mpris2Model.currentPlayer.album : ""
     readonly property int playbackStatus: ready ? mpris2Model.currentPlayer.playbackStatus : Mpris.PlaybackStatus.Unknown
     readonly property int shuffle: ready ? mpris2Model.currentPlayer.shuffle : Mpris.ShuffleStatus.Unknown
-    readonly property string artUrl: ready ? mpris2Model.currentPlayer.artUrl : ""
+    // Album art cache (workaround for ccatterina/plasmusic-toolbar#260).
+    // Some players (e.g. YT Music in Firefox via plasma-browser-integration) send
+    // follow-up metadata updates (e.g. the album arriving late) without mpris:artUrl,
+    // which wipes the cover a moment after a track change. Keep the last known art
+    // as long as the player and title stay the same. Album/artist are deliberately
+    // left out of the key, because they can arrive after the art.
+    readonly property string liveArtUrl: ready ? mpris2Model.currentPlayer.artUrl : ""
+    readonly property string artTrackKey: ready ? mpris2Model.currentPlayer.identity + "\u241F" + title : ""
+    property string cachedArtUrl: ""
+    property string cachedArtKey: ""
+
+    // Deferred: libkmpris emits trackChanged before artUrlChanged within a single
+    // metadata update, so only store once the whole update has been applied.
+    onLiveArtUrlChanged: Qt.callLater(rememberArt)
+    onArtTrackKeyChanged: Qt.callLater(rememberArt)
+
+    function rememberArt() {
+        if (liveArtUrl) {
+            cachedArtUrl = liveArtUrl;
+            cachedArtKey = artTrackKey;
+        }
+    }
+
+    readonly property string artUrl: liveArtUrl
+        || (artTrackKey !== "" && artTrackKey === cachedArtKey ? cachedArtUrl : "")
     readonly property int loopStatus: ready ? mpris2Model.currentPlayer.loopStatus : Mpris.LoopStatus.Unknown
     readonly property double songPosition: ready ? mpris2Model.currentPlayer.position : 0
     readonly property double songLength: ready ? mpris2Model.currentPlayer.length : 0
